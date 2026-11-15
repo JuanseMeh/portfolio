@@ -17,7 +17,9 @@ const serif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://juanse-meh.vercel.app";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://portfolio.juansebastianuribe49.workers.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

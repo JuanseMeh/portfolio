@@ -20,7 +20,8 @@ pnpm build
 ```
 
 Set `NEXT_PUBLIC_SITE_URL` when deploying so the OG image resolves to the real
-origin (defaults to the Vercel preview domain in `app/layout.tsx`).
+origin. It defaults to `https://portfolio.juansebastianuribe49.workers.dev`
+(Cloudflare Workers) in `app/layout.tsx`.
 
 ## Structure
 
