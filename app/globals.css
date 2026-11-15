@@ -1,0 +1,120 @@
+:root {
+  --void: #0b0c0f;
+  --base: #131317;
+  --surface: #18181d;
+  --line: rgba(229, 225, 231, 0.1);
+  --line-strong: rgba(229, 225, 231, 0.18);
+  --ash: #918f9a;
+  --mist: #c7c5d1;
+  --snow: #e7e4ea;
+  --signal: #bfc1ff;
+  --live: #44def5;
+  --warm: #f4b2e2;
+  --ok: #b5ccba;
+
+  --font-sans: var(--font-mono);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--void);
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--void);
+  color: var(--snow);
+  font-family: var(--font-mono), ui-monospace, "SFMono-Regular", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  background:
+    radial-gradient(
+      1200px 780px at 68% 34%,
+      rgba(191, 193, 255, 0.045),
+      transparent 62%
+    ),
+    radial-gradient(
+      900px 600px at 18% 88%,
+      rgba(68, 222, 245, 0.018),
+      transparent 60%
+    ),
+    var(--void);
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--base);
+}
+
+.contour-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.9;
+  -webkit-mask-image: radial-gradient(
+    ellipse 82% 78% at 58% 44%,
+    #000 22%,
+    transparent 94%
+  );
+  mask-image: radial-gradient(
+    ellipse 82% 78% at 58% 44%,
+    #000 22%,
+    transparent 94%
+  );
+  animation: field-in 2.6s ease 100ms both;
+}
+
+@keyframes field-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+:focus-visible {
+  outline: 1px solid var(--signal);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
